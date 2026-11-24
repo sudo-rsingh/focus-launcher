@@ -1,5 +1,6 @@
 package app.focuslauncher
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.role.RoleManager
 import android.content.ActivityNotFoundException
@@ -37,6 +38,9 @@ class HomeActivity : Activity() {
         if (savedInstanceState == null) requestHomeRole()
     }
 
+    // Only reached on API < 33. Newer versions use the OnBackInvokedCallback above.
+    // Lint's suggested fix needs AndroidX, which this app doesn't use.
+    @SuppressLint("GestureBackNavigation")
     @Deprecated("Back handling for API < 33; newer versions use OnBackInvokedCallback.")
     override fun onBackPressed() {
         // Swallowed on purpose.

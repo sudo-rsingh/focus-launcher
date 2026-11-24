@@ -10,12 +10,12 @@ val releaseKeystore = System.getenv("KEYSTORE_FILE")?.takeIf { it.isNotBlank() }
 
 android {
     namespace = "app.focuslauncher"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "app.focuslauncher"
         minSdk = 26
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
     }
